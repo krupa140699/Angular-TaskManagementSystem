@@ -1,0 +1,33 @@
+.navbar {
+  padding: 16px 26px;
+  background-color: #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    padding: 11px 12px;
+  }
+}
+.nav-brand {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #545454;
+  @media screen and (max-width: 1440px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.logout-btn {
+  font-size: 22px;
+  line-height: 26px;
+  color: #545454;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  @media screen and (max-width: 1440px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

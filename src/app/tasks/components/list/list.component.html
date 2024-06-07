@@ -1,0 +1,30 @@
+<section class="table-section">
+  <div class="task-container">
+    <div class="table-heading">
+      <h2 class="list-title">Task List:</h2>
+      <button mat-flat-button color="primary" [routerLink]="[AppPages.CreateTask]">Add Task</button>
+    </div>
+    <div cdkDropList class="task-list" (cdkDropListDropped)="drop($event)">
+      <div class="task-card" cdkDrag *ngFor="let task of taskList;">
+        <div class="task-card-placeholder" *cdkDragPlaceholder></div>
+        <div *ngIf="user?.role == UserRole.Admin" class="card-actions">
+          <button mat-icon-button [routerLink]="[AppPages.EditTask, task.id]"><mat-icon>edit_square</mat-icon></button>
+          <button mat-icon-button
+            (click)="deleteTask(task.id)"><mat-icon>delete</mat-icon></button>
+        </div>
+        <h3 class="task-title">{{task?.title}}</h3>
+        <p class="task-description">{{ task?.description }}</p>
+        <span class="status"><strong>Status:</strong> {{ task.status | taskStatus }}</span>
+        <span class="due-date"><strong>Due date:</strong> {{ task?.dueDate | date:'dd/MM/YYYY' }}</span>
+        <button *ngIf="user?.role != UserRole.Admin" mat-button class="mark-complete status-{{task.status}}" [disabled]="true">
+          <mat-icon *ngIf="task.status == TaskStatus.Completed">check</mat-icon>
+          <span>{{task.status | taskStatus}}</span>
+        </button>
+        <button *ngIf="user?.role == UserRole.Admin" mat-button class="mark-complete" [class.status-3]="task.status == TaskStatus.Completed" (click)="markAsComplete(task)">
+          <mat-icon *ngIf="task.status == TaskStatus.Completed">check</mat-icon>
+          <span>{{ task.status == TaskStatus.Completed ? 'Completed' : 'Mark Complete' }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

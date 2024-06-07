@@ -1,0 +1,10 @@
+.content-wrapper {
+  &.authenticated {
+    padding: 40px 0;
+    min-height: calc(100vh - 202px);
+
+    @media screen and (max-width: 767px) {
+      min-height: calc(100vh - 183px);
+    }
+  }
+}

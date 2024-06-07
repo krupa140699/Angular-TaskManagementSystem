@@ -1,0 +1,14 @@
+<div class="conform-delete-action">
+  <div *ngIf="data?.title" class="header">
+    <h2 mat-dialog-title>{{ data?.title }}</h2>
+  </div>
+
+  <div mat-dialog-content class="cd-message">
+    {{ data?.message }}
+  </div>
+
+  <div mat-dialog-actions [align]="'end'" class="dialog-action">
+    <button class="cancel" mat-button [mat-dialog-close]="false">{{ data?.cancelText }}</button>
+    <button class="confirm" mat-button [mat-dialog-close]="true">{{ data?.confirmText }}</button>
+  </div>
+</div>

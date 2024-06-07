@@ -1,0 +1,7 @@
+<app-header *ngIf="isAuthenticated"></app-header>
+<div class="container">
+  <div class="content-wrapper" [class.authenticated]="isAuthenticated">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-footer *ngIf="isAuthenticated"></app-footer>

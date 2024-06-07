@@ -1,0 +1,24 @@
+<section class="login-section">
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h2 class="heading">Login</h2>
+      <form [formGroup]="loginForm" (submit)="login()">
+        <div class="form-control-wrapper">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput type="email" name="email" formControlName="email">
+            <mat-error *ngIf="loginForm.controls.email.hasError('required')">Email is required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" formControlName="password">
+            <mat-error *ngIf="loginForm.controls.email.hasError('required')">Password is required</mat-error>
+          </mat-form-field>
+          <div class="form-action">
+            <button mat-flat-button color="primary" type="submit">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+{
+  "tasks": [
+    {
+      "title": "New task123",
+      "description": "This is myu new task",
+      "dueDate": "2024-06-27T00:00:00+05:30",
+      "status": "3",
+      "order": 1,
+      "id": "1717592788954"
+    },
+    {
+      "title": "Test Task",
+      "description": "Lorem ipsum dolor sit amet.",
+      "dueDate": "2024-06-11T00:00:00+05:30",
+      "status": "3",
+      "id": "1717597544669",
+      "order": 3
+    },
+    {
+      "title": "new task added",
+      "description": "New task description",
+      "dueDate": "2024-06-19T00:00:00+05:30",
+      "status": "3",
+      "id": "1717607133285",
+      "order": 5
+    },
+    {
+      "title": "New title",
+      "description": "New description",
+      "dueDate": "2024-06-20T00:00:00+05:30",
+      "status": "1",
+      "id": "1717607669358",
+      "order": 4
+    },
+    {
+      "title": "Test",
+      "description": "test task with reorder",
+      "dueDate": "2024-06-20T18:30:00.000Z",
+      "status": "3",
+      "order": 6,
+      "id": "1717667207061"
+    },
+    {
+      "title": "Hello 123",
+      "description": "Lorem ipsum description",
+      "dueDate": "2024-06-13T18:30:00.000Z",
+      "status": "2",
+      "order": 7,
+      "id": "1717673766325"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "user1@example.com",
+      "password": "password1",
+      "role": 1
+    },
+    {
+      "id": "2",
+      "email": "user2@example.com",
+      "password": "password2",
+      "role": 2
+    }
+  ]
+}

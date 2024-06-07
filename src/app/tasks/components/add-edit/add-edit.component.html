@@ -1,0 +1,39 @@
+<section class="add-edit-task">
+  <div class="form-wrapper">
+    <h2 class="form-title">{{ isEditMode ? 'Edit' : 'Add'}} Task:</h2>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="form-control-wrapper">
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput name="title" formControlName="title">
+          <mat-error *ngIf="taskForm.get('title')?.errors?.['required']">Title is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput name="description" formControlName="description"></textarea>
+          <mat-error *ngIf="taskForm.get('description')?.errors?.['required']">Description is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Due date</mat-label>
+          <input matInput [matDatepicker]="dueDatePicker" [min]="minDate" [readonly]="true" formControlName="dueDate">
+          <mat-datepicker-toggle matSuffix [for]="dueDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #dueDatePicker></mat-datepicker>
+          <mat-error *ngIf="taskForm.get('dueDate')?.errors?.['required']">Please select the due date</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select name="status" formControlName="status">
+            <mat-option value="1">Pending</mat-option>
+            <mat-option value="2">In progress</mat-option>
+            <mat-option value="3">Completed</mat-option>
+          </mat-select>
+          <mat-error *ngIf="taskForm.get('status')?.errors?.['required']">Please select the status</mat-error>
+        </mat-form-field>
+        <div class="form-action">
+          <button mat-flat-button color="warn" type="button" [routerLink]="['/', AppPages.Tasks]">Cancel</button>
+          <button mat-flat-button color="primary" type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
